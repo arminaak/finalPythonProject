@@ -182,10 +182,23 @@ frame.set_draw_handler(draw)
 frame.set_mouseclick_handler(mouseclick)
 
 # Add buttons for room navigation
-frame.add_button("Go North", lambda: move("north"), 100)
-frame.add_button("Go South", lambda: move("south"), 100)
-frame.add_button("Go East", lambda: move("east"), 100)
-frame.add_button("Go West", lambda: move("west"), 100)
+def move_north():
+    move("north")
+
+def move_south():
+    move("south")
+
+def move_east():
+    move("east")
+
+def move_west():
+    move("west")
+
+frame.add_button("Go North", move_north, 100)
+frame.add_button("Go South", move_south, 100)
+frame.add_button("Go East", move_east, 100)
+frame.add_button("Go West", move_west, 100)
+
 
 update_total_bags()
 
